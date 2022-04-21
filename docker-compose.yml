@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  proxy:
+    image: site-nt-nginx
+    build:
+      context: .
+    ports:
+      - "30000:80"
+    networks:
+      - site-nt
+
+networks:
+  site-nt:
+    driver: bridge
